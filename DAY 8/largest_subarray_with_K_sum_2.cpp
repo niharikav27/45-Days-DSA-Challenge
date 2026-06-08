@@ -10,11 +10,13 @@ public:
             if(sum == k){
                 maxLen = max(maxLen , i+1);
             }
+
             int rem = sum - k ;
             if(preSumMap.find(rem) != preSumMap.end()){
                 int len = i - preSumMap[rem];
                 maxLen = max(maxLen , len);
             }
+            
             if(preSumMap.find(sum) == preSumMap.end()){
                 preSumMap[sum] = i;
             }
